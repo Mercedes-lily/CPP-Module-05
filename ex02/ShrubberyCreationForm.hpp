@@ -1,7 +1,7 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-# include <string>
+# include "AForm.hpp"
 
 class  ShrubberyCreationForm : public AForm
 {
@@ -12,7 +12,7 @@ public:
 	ShrubberyCreationForm( ShrubberyCreationForm const& src);
 	~ShrubberyCreationForm(void);
 	ShrubberyCreationForm& operator=( ShrubberyCreationForm const& rhs);
-	void execute(const Bureaucrat &b) const;
+	void execute(void) const;
 };
 
 #endif

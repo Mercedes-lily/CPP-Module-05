@@ -1,17 +1,18 @@
-#include <"ShruberyCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 
- ShrubberyCreationForm:: ShrubberyCreationForm(void) : Aform("Shrubbery Creation", 145, 137, "target")
+ ShrubberyCreationForm:: ShrubberyCreationForm(void) : AForm("ShrubberyCreation", 145, 137, "target")
 {
 	std::cout << "Shrubbery Creation Form is print" << std::endl;
 }
 
-ShrubberyCreationForm(std::string target) : Aform("Shrubbery Creation", 145, 137, target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreation", 145, 137, target)
 {
 	std::cout << "Shrubbery Creation Form is print" << std::endl;
 }
 
- ShrubberyCreationForm:: ShrubberyCreationForm(ShrubberyCreationForm const& src) : Aform("Shrubbery Creation", 145, 137, src.getTarget())
+ ShrubberyCreationForm:: ShrubberyCreationForm(ShrubberyCreationForm const& src) : AForm("Shrubbery Creation", 145, 137, src.getTarget())
 {
 	*this = src;
 }
@@ -20,7 +21,7 @@ ShrubberyCreationForm(std::string target) : Aform("Shrubbery Creation", 145, 137
 {
 	if (this != &rhs)
 	{
-		this->target = rhs.target;
+		this->setTarget(rhs.getTarget());
 	}
 	return *this;
 }
@@ -30,10 +31,10 @@ ShrubberyCreationForm::~ ShrubberyCreationForm(void)
 	std::cout << "Shrubbery Creation Form is destroy" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &b) const
+void ShrubberyCreationForm::execute(void) const
 {
-	std::string file = this->target + "_shrubbery";
-	std::fstream out(file);
+	std::string file = this->getTarget() + "_shrubbery";
+	std::ofstream out(file);
 	out << "											." << std::endl;              
 	out << "									.         ;"  << std::endl;                
 	out << "		.              .              ;%     ;;"  << std::endl;                 
@@ -62,4 +63,5 @@ void ShrubberyCreationForm::execute(const Bureaucrat &b) const
 	out << "					;%@@@@%::;."  << std::endl;                                       
 	out << "					;%@@@@%%:;;;."   << std::endl;                             
 	out << "				...;%@@@@@%%:;;;;,.."  << std::endl;                               
+	std::cout << "File created" << std::endl;
 }

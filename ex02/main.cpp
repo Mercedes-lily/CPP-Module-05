@@ -1,121 +1,41 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-	// main ex00
-	// try
-	// {
-	// 	Bureaucrat Hannah("Hannah", 0);
-	// }
-	// catch(Bureaucrat::TOOHIGHException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch(Bureaucrat::TOOLOWException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	Bureaucrat Erik("Erik", 151);
-	// }
-	// catch(Bureaucrat::TOOHIGHException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch(Bureaucrat::TOOLOWException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	Bureaucrat Bob;
-	// 	Bob.increaseGrade();
-	// }
-	// catch(Bureaucrat::TOOHIGHException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch(Bureaucrat::TOOLOWException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	Bureaucrat Ariel("Ariel", 150);
-	// 	Ariel.decreaseGrade();
-	// }
-	// catch(Bureaucrat::TOOHIGHException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch(Bureaucrat::TOOLOWException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	Bureaucrat Liam("Liam", 23);
-
-	// 	Liam.decreaseGrade();
-	// 	std::cout << Liam;
-	// 	Liam.increaseGrade();
-	// 	std::cout << Liam;
-	// }
-	// catch(Bureaucrat::TOOHIGHException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch(Bureaucrat::TOOLOWException &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-
-	// main ex01
+	AForm *Robotomy = new RobotomyRequestForm("You");
+	AForm *Presidential = new PresidentialPardonForm("Ermenegilde");
+	AForm *Shruberry = new ShrubberyCreationForm("myHouse");
+	AForm *Robotomy2 = new RobotomyRequestForm("Bob");
+	AForm *Presidential2 = new PresidentialPardonForm("Bob");
+	AForm *Shru2 = new ShrubberyCreationForm("myHouse");
+	Bureaucrat Andre("Andre", 5);
+	Bureaucrat Vincent("Vincent", 25);
+	Bureaucrat Felix("Felix", 72);
+	Bureaucrat Sebastien("Sebastien", 145);
 	try
 	{
-		Form C203("C203", 151, 151);
+		Andre.signForm(*Robotomy);
+		Andre.signForm(*Presidential);
+		Andre.signForm(*Shruberry);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Robotomy);
+		Andre.executeForm(*Presidential);
+		Andre.executeForm(*Shruberry);
+		std::cout << std::endl;
 	}
-	catch(Form::TOOHIGHException &e)
+	catch(AForm::TOOHIGHException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch(Form::TOOLOWException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Form C204("C204", 0, 0);
-	
-	}
-	catch(Form::TOOHIGHException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch(Form::TOOLOWException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Form C205("C205", 1, 1);
-		Form C206("C206", 150, 150);
-		Form C207(C206);
-		Form C208 = C205;
-		Bureaucrat Liam("Liam", 1);
-
-		std::cout << C205 << C206 << C207 << C208;
-		Liam.signForm(C205);
-		Liam.signForm(C206);
-		Liam.signForm(C206);
-	}
-	catch(Form::TOOHIGHException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch(Form::TOOLOWException &e)
+	catch(AForm::TOOLOWException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -127,19 +47,18 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-		try
+
+	try
 	{
-		Form C205("C205", 1, 1);
-		Form C206("C206", 150, 1);
-		Bureaucrat Ermenegilde("Ermenegilde", 150);
-		Ermenegilde.signForm(C206);
-		Ermenegilde.signForm(C205);
+		Felix.signForm(*Robotomy2);
+		Felix.executeForm(*Robotomy2);
+		std::cout << std::endl;
 	}
-	catch(Form::TOOHIGHException &e)
+	catch(AForm::TOOHIGHException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch(Form::TOOLOWException &e)
+	catch(AForm::TOOLOWException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -151,4 +70,54 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Vincent.signForm(*Presidential2);
+		Vincent.executeForm(*Presidential2);
+		std::cout << std::endl;
+	}
+	catch(AForm::TOOHIGHException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(AForm::TOOLOWException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(Bureaucrat::TOOHIGHException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(Bureaucrat::TOOLOWException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Sebastien.signForm(*Shru2);
+		Sebastien.executeForm(*Shru2);
+		std::cout << std::endl;
+	}
+	catch(AForm::TOOHIGHException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(AForm::TOOLOWException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(Bureaucrat::TOOHIGHException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch(Bureaucrat::TOOLOWException &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	delete Robotomy;
+	delete Shruberry;
+	delete Presidential;
+	delete Robotomy2;
+	delete Shru2;
+	delete Presidential2;
 }
