@@ -12,7 +12,7 @@ public:
 	ShrubberyCreationForm( ShrubberyCreationForm const& src);
 	~ShrubberyCreationForm(void);
 	ShrubberyCreationForm& operator=( ShrubberyCreationForm const& rhs);
-	void execute(void) const;
+	void executeForm(void) const;
 };
 
 #endif

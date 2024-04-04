@@ -22,7 +22,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& r
 	return *this;
 }
 
-void RobotomyRequestForm::execute(void) const
+void RobotomyRequestForm::executeForm(void) const
 {
 	static int i = 0;
 	if(i == 0)

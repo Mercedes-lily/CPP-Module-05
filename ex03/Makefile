@@ -1,4 +1,4 @@
-NAME = Form2.0
+NAME = Intern
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
@@ -10,7 +10,8 @@ SRCS =	Bureaucrat.cpp \
 		AForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp \
+		Intern.cpp
 
 VPATH = $(OBJ_DIR)
 

@@ -31,7 +31,7 @@ ShrubberyCreationForm::~ ShrubberyCreationForm(void)
 	std::cout << "Shrubbery Creation Form is destroy" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(void) const
+void ShrubberyCreationForm::executeForm(void) const
 {
 	std::string file = this->getTarget() + "_shrubbery";
 	std::ofstream out(file);

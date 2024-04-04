@@ -85,14 +85,14 @@ const char* AForm::NotSignedException::what() const throw()
 	return("AForm::Impossible to execute an unsigned Aform.");
 }
 
-void AForm::beExecute(const Bureaucrat &b) const
+void AForm::execute(const Bureaucrat &b) const
 {
 	if (this->_state == 0)
 		throw AForm::NotSignedException();
 	if (b.getGrade() > this->_executeGrade)
 		throw AForm::TOOLOWException();
 	else
-		this->execute();
+		this->executeForm();
 }
 
 std::ostream	&operator<<(std::ostream &out, const AForm & f)

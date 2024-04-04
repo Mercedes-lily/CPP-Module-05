@@ -56,6 +56,7 @@ int main()
 	{
 		Bureaucrat Liam("Liam", 23);
 
+		std::cout << Liam;
 		Liam.decreaseGrade();
 		std::cout << Liam;
 		Liam.increaseGrade();

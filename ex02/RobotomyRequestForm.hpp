@@ -12,7 +12,7 @@ public:
 	RobotomyRequestForm(RobotomyRequestForm const& src);
 	~RobotomyRequestForm(void);
 	RobotomyRequestForm& operator=(RobotomyRequestForm const& rhs);
-	void execute(void) const;
+	void executeForm(void) const;
 };
 
 #endif

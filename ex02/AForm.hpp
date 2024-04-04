@@ -27,8 +27,8 @@ public:
 	std::string getTarget(void) const;
 	void setTarget(std::string target);
 	void beSigned(const Bureaucrat &b);
-	void beExecute(const Bureaucrat &b) const;
-	virtual void execute(void) const = 0;
+	void execute(const Bureaucrat &b) const;
+	virtual void executeForm(void) const = 0;
 	class TOOHIGHException : public std::exception
 	{
 		public:

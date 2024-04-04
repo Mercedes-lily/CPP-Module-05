@@ -51,7 +51,10 @@ void Form::beSigned(const Bureaucrat &b)
 	if (this->_state == 1)
 		std::cout << this->_name << " already signed" << std::endl;
 	else if(b.getGrade() > this->_signGrade)
+	{
+		std::cout << b.getName() << " couldn’t sign " << this->_name << " because his grade is too low." << std::endl;
 		throw Bureaucrat::TOOLOWException();
+	}
 	else
 	{
 		std::cout << this->_name << " signed by " << b.getName()<< std::endl;

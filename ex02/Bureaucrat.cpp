@@ -96,7 +96,7 @@ void Bureaucrat::executeForm(AForm const &form) const
 {
 	try
 	{
-		form.beExecute(*this);
+		form.execute(*this);
 	}
 	catch(Bureaucrat::TOOLOWException &e)
 	{
